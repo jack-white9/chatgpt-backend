@@ -1,10 +1,13 @@
 import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
-const port = 3000;
+const port = 5000;
+
+app.use(cors());
 
 app.get("/:input", async (req, res) => {
   const input = req.params.input;
